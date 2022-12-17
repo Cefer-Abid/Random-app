@@ -1,48 +1,56 @@
 "use strict";
-// tesadufi bir secim eden bir proqram yaz
-// bu proqram daxil olan butun  adlari qebul edir, onlari siraya duzub ekranda numayis etdirir
-// button`a basdiqda ise tesadufi  bir adi gosterir
 
-// butun adlari yazmaq ucun bir input
-
+// Decleration elements
 const inputEl = document.querySelector(".input");
 const btnInputEL = document.querySelector(".btn-input");
 const btnRandomEL = document.querySelector(".btn-random");
-const ulEL = document.querySelector(".ul-list");
+const ulNameEL = document.querySelector(".ul-name");
 const randomInputEL = document.querySelector(".random-input");
 const ulDisEL = document.querySelector(".ul-dis");
+const btnRestartEL = document.querySelector(".btn-restart");
 
-const data = ["start"];
-//function
+let data = ["start"];
+let randomArr = [];
+
+// Function
 const x = function () {
-  data.push(inputEl.value);
-  console.log(...data);
-  const li = document.createElement("li");
-  li.classList.add("list");
-  li.textContent = inputEl.value;
-  ulEL.appendChild(li);
-  inputEl.value = ``;
+  if (inputEl.value) {
+    data.push(inputEl.value);
+    const li = document.createElement("li");
+    li.classList.add("list");
+    li.textContent = inputEl.value;
+    ulNameEL.appendChild(li);
+    inputEl.value = ``;
+  }
 };
 
-// bu inputa daxil olan adlari qebul edib saxlayan bir data
-// ve ekranda gosteren sistem
-
+// Input names
 btnInputEL.addEventListener("click", x);
 document.addEventListener("keydown", function (e) {
   if (e.key === "Enter") x();
 });
 
-// ve hemin datadan tesadufi bir secim eden bir random
-// ve randomdan cixan reqeme uygun adi ekranda goster
-
+// Random and Display
 btnRandomEL.addEventListener("click", function () {
-  const req = Math.trunc(Math.random() * randomInputEL.value) + 1;
-  console.log(req);
-  console.log(data[req]);
-  const li = document.createElement("li");
-  li.classList.add("list");
-  li.textContent = data[req];
-  ulDisEL.appendChild(li);
-  inputEl.value = ``;
+  if (randomInputEL.value) {
+    let req = Math.trunc(Math.random() * randomInputEL.value) + 1;
+
+    if (!randomArr.includes(req)) {
+      randomArr.push(req);
+
+      const li = document.createElement("li");
+      li.classList.add("list");
+      li.textContent = data[req];
+      ulDisEL.appendChild(li);
+    }
+  }
 });
 
+// Restart
+btnRestartEL.addEventListener("click", function () {
+  data = ["start"];
+  randomArr = [];
+  randomInputEL.value = ``;
+  ulNameEL.textContent = ``;
+  ulDisEL.textContent = ``;
+});
