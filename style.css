@@ -1,0 +1,27 @@
+.form {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+.random {
+  position: absolute;
+  top: 100px;
+  left: 380px;
+}
+
+.names {
+  position: absolute;
+  top: 150px;
+  left: 100px;
+}
+
+.list {
+  list-style: decimal;
+}
+
+.display {
+  position: absolute;
+  top: 150px;
+  left: 400px;
+}
