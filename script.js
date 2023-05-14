@@ -62,7 +62,16 @@ container.addEventListener("click", function (e) {
     state.randomInvidualNames = [];
 
     // Clean all li elements
-    const nodeList = document.querySelectorAll(".list");
-    Array.from(nodeList).map((el) => el.remove());
+    window.location.reload();
+  }
+
+  // Delete player
+  if (e.target.classList.contains("player--list__icon")) {
+    const index = +e.target.dataset.index;
+    state.allName.splice(index, 1);
+    console.log("index", index);
+
+    // Display new list
+    addNameToList(state.allName, playersList);
   }
 });

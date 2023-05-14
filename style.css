@@ -4,18 +4,36 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgba(128, 128, 128, 0.032);
+  color: #010b15;
+}
+
 button {
   padding: 8px 12px;
 }
 
 .container {
-  margin: 50px;
+  margin: 50px auto;
+  width: 1210px;
+  padding: 10px;
+  border-radius: 10px;
 
   display: grid;
   /* grid-template-columns: 1fr 1fr; */
   grid-template-columns: repeat(2, 300px);
   column-gap: 400px;
-  row-gap: 150px;
+  row-gap: 80px;
+}
+
+.header {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+}
+.header--text {
+  font-size: 27px;
+  color: #1971c2;
 }
 
 .restart-buttons {
@@ -40,8 +58,16 @@ button {
 .input {
   padding: 10px 20px;
   border-radius: 6px;
-  border: 2px solid rgba(128, 128, 128, 0.402);
+  /* border: 2px solid rgba(128, 128, 128, 0.402); */
+  border: 2px solid #1971c2;
+  box-shadow: 3px 5px 10px #74c0fc;
   outline: none;
+  color: #103f6c;
+  letter-spacing: 0.6px;
+}
+.input::placeholder {
+  color: #103f6c;
+  letter-spacing: 0.6px;
 }
 
 .display--fields {
@@ -52,6 +78,7 @@ button {
 .display--invidual-names,
 .display--all-names,
 .players--list {
+  min-width: 95px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -105,7 +132,6 @@ button {
   border-bottom: 2px solid blue;
   height: 28px;
   align-items: center;
-  min-width: 95px;
 }
 
 .individual--random--list {

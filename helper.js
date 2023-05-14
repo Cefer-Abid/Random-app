@@ -5,7 +5,8 @@ const playersListStr = function (player, i) {
         <span class="player__index">${i + 1}</span>
         <span class="player__name">${player}</span>
       </div>
-      <img src="icon-img/icons8-delete-64.png" class="player--list__icon"/>
+      <img src="icon-img/icons8-delete-64.png" 
+      class="player--list__icon" data-index="${i}"/>
     </li>
     `;
 };
