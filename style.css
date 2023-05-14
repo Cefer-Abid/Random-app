@@ -1,28 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 8px 12px;
+}
+
+.container {
+  margin: 50px;
+
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: repeat(2, 300px);
+  column-gap: 400px;
+  row-gap: 150px;
+}
+
+.restart-buttons {
+  grid-column: 1/-1;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  Left Section  Right Section  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.right--section,
+.left--section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.random-buttons,
 .form {
-  position: absolute;
-  top: 100px;
-  left: 100px;
+  display: flex;
+  gap: 20px;
 }
 
-.random {
-  position: absolute;
-  top: 100px;
-  left: 380px;
+.input {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 2px solid rgba(128, 128, 128, 0.402);
+  outline: none;
 }
 
-.names {
-  position: absolute;
-  top: 150px;
-  left: 100px;
+.display--fields {
+  display: flex;
+  gap: 50px;
 }
 
-.list {
+.display--invidual-names,
+.display--all-names,
+.players--list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   list-style: decimal;
+  /* margin-left: 15px; */
+  text-transform: capitalize;
 }
 
-.display {
-  position: absolute;
-  top: 150px;
-  left: 400px;
+.list__player {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+  align-items: center;
+  gap: 20px;
 }
 
+.player--div {
+  width: 100%;
+  display: flex;
+  transition: 0.3s;
+}
+
+.player__name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.531);
+}
+
+.player--div:hover {
+  transform: translateX(-5px);
+}
+
+.player--list__icon {
+  height: 28px;
+  transition: 0.3s;
+}
+.player--list__icon:hover {
+  transform: scale(1.1);
+}
+.player--list__icon:active {
+  transform: scale(0.9);
+}
+
+.random--list {
+  align-items: center;
+  list-style: none;
+}
+
+.random--list__player {
+  border-bottom: 2px solid blue;
+  height: 28px;
+  align-items: center;
+  min-width: 95px;
+}
+
+.individual--random--list {
+  display: flex;
+  justify-content: center;
+}

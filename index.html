@@ -6,33 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Random</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="script.js"></script>
   </head>
   <body>
     <div class="container">
-      <!-- section left -->
-      <section class="left">
-        <div class="form">
-          <input type="text" class="input" />
-          <button class="btn-input">Daxil et</button>
-        </div>
-        <div class="names">
-          <ul class="ul-name"></ul>
-        </div>
-      </section>
-      <!-- section right -->
-      <section class="right">
-        <div class="random">
-          <input type="number" class="random-input" />
-          <button class="btn-random">Random</button>
-        </div>
-        <div class="display">
-          <ul class="ul-dis"></ul>
-        </div>
-      </section>
       <!-- Restart -->
-      <button class="btn-restart">Again</button>
-    </div>
+      <div class="restart-buttons">
+        <button class="btn-restart">Restart</button>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- section left -->
+      <section class="left--section">
+        <h3>Racer names</h3>
+
+        <form class="form">
+          <input
+            type="text"
+            class="input"
+            placeholder="Include racer names..."
+          />
+          <button class="btn-input">Daxil et</button>
+        </form>
+        <ul class="players--list"></ul>
+      </section>
+
+      <!-- section right -->
+      <section class="right--section">
+        <h3>Choosen names</h3>
+
+        <div class="random-buttons">
+          <button class="btn-random btn-random--all">Random All</button>
+          <button class="btn-random--invidual">Random Invidual</button>
+        </div>
+        <div class="display--fields">
+          <ul class="display--all-names"></ul>
+          <ul class="display--invidual-names"></ul>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
