@@ -1,8 +1,8 @@
-import { addNameToList } from "./helper.js";
+import { addNameToList, deleteSpaces } from "./helper.js";
 
 const container = document.querySelector(".container");
 const formEl = document.querySelector(".form");
-const newName = document.querySelector(".input");
+const newPlayer = document.querySelector(".input");
 const playersList = document.querySelector(".players--list");
 const containerAllNames = document.querySelector(".display--all-names");
 const containerInvidualNames = document.querySelector(
@@ -10,21 +10,29 @@ const containerInvidualNames = document.querySelector(
 );
 
 const state = {
-  // allName: [],
-  allName: ["cefer", "husi", "zeze", "mehemmed", "elnur"],
+  allName: [],
+  // allName: ["cefer", "husi", "zeze", "mehemmed", "elnur"],
   randomAllNames: [],
   randomInvidualNames: [],
 };
-state.randomInvidualNames = state.allName.slice();
+// state.randomInvidualNames = state.allName.slice();
 
 formEl.addEventListener("submit", function (e) {
   e.preventDefault();
+  if (!newPlayer.value) return;
 
-  state.allName.push(newName.value);
+  // Include multiplayer with "," or one by one
+  const players = newPlayer.value.split(",");
+
+  // Delete spaces from players
+  deleteSpaces(players);
+
+  state.allName.push(...players);
+
   addNameToList(state.allName, playersList);
 
   state.randomInvidualNames = state.allName.slice();
-  newName.value = "";
+  newPlayer.value = "";
 });
 
 container.addEventListener("click", function (e) {
@@ -56,12 +64,12 @@ container.addEventListener("click", function (e) {
 
   //    Restart
   if (e.target.classList.contains("btn-restart")) {
-    // Clean all arrays
+    // Clean all array
     state.allName = [];
     state.randomAllNames = [];
     state.randomInvidualNames = [];
 
-    // Clean all li elements
+    // Clean window
     window.location.reload();
   }
 
@@ -69,9 +77,10 @@ container.addEventListener("click", function (e) {
   if (e.target.classList.contains("player--list__icon")) {
     const index = +e.target.dataset.index;
     state.allName.splice(index, 1);
-    console.log("index", index);
 
     // Display new list
     addNameToList(state.allName, playersList);
   }
 });
+
+

@@ -33,3 +33,7 @@ export const addNameToList = function (players, element) {
 
   element.insertAdjacentHTML("beforeend", str);
 };
+
+export const deleteSpaces = function (arr) {
+  arr.map((el, i) => el.trim() === "" && arr.splice(i, 1));
+};
