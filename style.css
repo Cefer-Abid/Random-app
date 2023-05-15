@@ -11,6 +11,7 @@ body {
 
 button {
   padding: 8px 12px;
+  cursor: pointer;
 }
 
 .container {
@@ -54,6 +55,9 @@ button {
   display: flex;
   gap: 20px;
 }
+.form {
+  position: relative;
+}
 
 .input {
   padding: 10px 20px;
@@ -70,13 +74,32 @@ button {
   letter-spacing: 0.6px;
 }
 
+.info-input {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.info-icon--input {
+  height: 20px;
+}
+.info-icon--text {
+  font-size: 14px;
+  color: #6a6a6a;
+}
+
 .display--fields {
   display: flex;
   gap: 50px;
 }
 
-.display--invidual-names,
-.display--all-names,
+.display--invidual-players,
+.display--all-players,
 .players--list {
   min-width: 95px;
   display: flex;
@@ -137,4 +160,25 @@ button {
 .individual--random--list {
   display: flex;
   justify-content: center;
+}
+
+.invidual-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-random--restart {
+  height: 28px;
+  transition: 0.2s;
+}
+.btn-random--restart:hover {
+  transform: scale(1.08);
+}
+.btn-random--restart:active {
+  transform: scale(1);
+}
+
+.hidden {
+  display: none;
 }

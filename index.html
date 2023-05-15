@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Random</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer type="module" src="script.js"></script>
+    <script defer type="module" src="control.js"></script>
   </head>
   <body>
     <div class="container">
@@ -24,6 +24,15 @@
         <h3>Player names</h3>
 
         <form class="form">
+          <div class="info-input">
+            <img
+              src="icon-img/icons8-information-64.png"
+              class="info-icon--input"
+            />
+            <span class="info-icon--text hidden"
+              >Use comma to enter as multiplayer</span
+            >
+          </div>
           <input
             type="text"
             class="input"
@@ -39,16 +48,17 @@
         <h3>Selected names</h3>
 
         <div class="random-buttons">
-          <button class="btn-random btn-random--all">Random All</button>
-          <button class="btn-random--invidual">Random Invidual</button>
+          <button class="btn-random btn-random--general">Random All</button>
+          <div class="invidual-buttons">
+            <button class="btn-random--invidual">Random Invidual</button>
+            <img class="btn-random--restart" src="icon-img/icons8-rotate-left-32.png"/>
+          </div>
         </div>
         <div class="display--fields">
-          <ul class="display--all-names"></ul>
-          <ul class="display--invidual-names"></ul>
+          <ul class="display--all-players"></ul>
+          <ul class="display--invidual-players"></ul>
         </div>
       </section>
     </div>
   </body>
 </html>
-
-

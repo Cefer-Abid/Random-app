@@ -20,9 +20,9 @@ const randomListStr = function (player) {
     </li>
     `;
 };
-
-export const addNameToList = function (players, element) {
+export const addPlayersToList = function (players, element) {
   element.innerHTML = "";
+
   const str = players
     .map((player, i) => {
       if (element.classList.contains("players--list"))
